@@ -13,6 +13,7 @@ const authRoute = require("./routes/auth");
 const aboutRoute = require("./routes/about");
 const educationRoute = require("./routes/education");
 const contactRoute = require("./routes/contact");
+const experienceRoute = require("./routes/experience");
 
 // MIDDLEWARES
 app.use(express.json());
@@ -22,6 +23,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/about", aboutRoute);
 app.use("/api/v1/educations", educationRoute);
 app.use("/api/v1/contacts", contactRoute);
+app.use("/api/v1/experiences", experienceRoute);
 
 // MANAGEMENT ROUTES
 app.use(notFoundMiddleware);
