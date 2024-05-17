@@ -10,12 +10,14 @@ const errorHandlerMiddleware = require("./middlewares/error-handler");
 
 // DEFINE ROUTES
 const authRoute = require("./routes/auth");
+const aboutRoute = require("./routes/about");
 
 // MIDDLEWARES
 app.use(express.json());
 
 // ROUTES
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/about", aboutRoute);
 
 // MANAGEMENT ROUTES
 app.use(notFoundMiddleware);
