@@ -9,11 +9,13 @@ const notFoundMiddleware = require("./middlewares/not-found");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
 
 // DEFINE ROUTES
+const authRoute = require("./routes/auth");
 
 // MIDDLEWARES
 app.use(express.json());
 
 // ROUTES
+app.use("/api/v1/auth", authRoute);
 
 // MANAGEMENT ROUTES
 app.use(notFoundMiddleware);
