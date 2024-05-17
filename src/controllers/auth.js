@@ -3,7 +3,6 @@ const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, UnauthenticatedError } = require("../errors");
 const AuthUtil = require("../utils/authUtil");
 const {
-  UNAUTHORIZED,
   INVALID_CREDENTIALS,
   MISSING_CREDENTIALS,
 } = require("../constants/error_messages");
@@ -11,7 +10,7 @@ const {
 const register = async (req, res, next) => {
   const { roles, createdBy } = req.body;
   if (roles || createdBy) {
-    throw new UnauthenticatedError(UNAUTHORIZED);
+    throw new UnauthenticatedError();
   }
 
   const admin = await Admin.create({ ...req.body });
